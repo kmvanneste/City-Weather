@@ -1,0 +1,19 @@
+Open Weather Map API Key:
+
+7558419d9a99d2be3b1975a5ecc02218
+
+Sample Current Weather Data:
+https://samples.openweathermap.org/data/2.5/weather?q=London,uk&appid=439d4b804bc8187953eb36d2a8c26a02
+-
+
+
+
+5 Day weather
+api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}
+
+
+
+
+One Call API - current weather, has UV index
+https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&
+exclude=hourly,daily&appid={YOUR API KEY}
