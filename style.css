@@ -17,3 +17,7 @@
     font-family: 'La Belle Aurore', cursive;
     font-size: 20pt
 }
+
+.navbar {
+    margin-top: -40px;
+}
