@@ -8,6 +8,7 @@
     background-position-x: right;
     background-position-y: -3rem;  */
     color: whitesmoke;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .jumbo-title{
@@ -25,4 +26,8 @@
 
 .navbar {
     margin-top: -40px;
+}
+
+.hide {
+    display: none;
 }
