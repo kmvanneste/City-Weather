@@ -3,25 +3,41 @@
 
 var authKey = "7558419d9a99d2be3b1975a5ecc02218";
 
-var citySearch = "";
+var citySearch = "London";
 
 var currentWeatherURL = `api.openweathermap.org/data/2.5/weather?q=
 ${citySearch}&appid=${authKey}`;
 
 var fiveDayURL = `api.openweathermap.org/data/2.5/forecast?q=${citySearch}&appid=${authKey}`;
 
-var oneCallURL = `https://api.openweathermap.org/data/2.5/onecall?lat=33.441792&lon=-94.037689&exclude=hourly,daily&appid=${authKey}`
-
-
-
-
 
 // FUNCTIONS
 //======================================================
 
+function runQuery(citySearch, queryURL) {
+
+    // AJAX Function 
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })  .then(function(response) {
+        console.log(queryURL);
+        console.log(response);
+      });
+    
+      
+
+}
+
+
+
 //MAIN PROCESSES
 //======================================================
+$("#searchBtn").on('click', function() {
+    runQuery(citySearch, currentWeatherURL);
 
+    return false;
+})
 
 //1. Retrieve user inputs and convert to variables
 //2. Use those variables to run on AJAX call to the weather website
