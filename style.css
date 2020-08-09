@@ -1,7 +1,12 @@
 
 .jumbotron {
     background-image: url(Cloud.jpg);
-    background-size: 110% 170%;
+    /* background-size: 110% 170%; */
+    background-position: center; 
+    background-repeat: no-repeat;
+    /* background-size: cover;
+    background-position-x: right;
+    background-position-y: -3rem;  */
     color: whitesmoke;
 }
 
