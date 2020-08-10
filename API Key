@@ -41,12 +41,6 @@ api.openweathermap.org/data/2.5/forecast?q={city name}&appid={your api key}
 
 --------------------------------------------------------------------------------
 
-
-
-
---------------------------------------------------------------------------------
-
-
 One Call API - current weather, has UV index
 
 ONLY for LAT and LONG COORDINATES

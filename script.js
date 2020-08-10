@@ -1,40 +1,76 @@
-// SETUP VARIABLES
-//======================================================
+// VARIABLES
 
 var authKey = "7558419d9a99d2be3b1975a5ecc02218";
 
-var citySearch = "London";
+var citySearch = "";
 
-var currentWeatherURL = `api.openweathermap.org/data/2.5/weather?q=
-${citySearch}&appid=${authKey}`;
+var currentWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${authKey}`;
 
-var fiveDayURL = `api.openweathermap.org/data/2.5/forecast?q=${citySearch}&appid=${authKey}`;
+var fiveDayURL = `https://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&appid=${authKey}`;
+
 
 
 // FUNCTIONS
-//======================================================
 
-function runQuery(citySearch, queryURL) {
-
-    // AJAX Function 
+//Current Weather Object
+function runCurrentQuery(queryURL) {
     $.ajax({
         url: queryURL,
         method: "GET"
       })  .then(function(response) {
+        //City Name
+        console.log(response.name);
+        //Icon
+        console.log(response.weather[1].icon);
+        //Temp in Kelvin
+        console.log(response.main.temp);
+        //Humidity
+        console.log(response.main.humidity);
+        //Wind Speed
+        console.log()
+
+
+
+
         console.log(queryURL);
         console.log(response);
       });
-    
-      
-
 }
 
+//Five Day Forecast Object
+function runForecastQuery(queryURL) {
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      })  .then(function(response) {
+
+        for (var i=0; i<response.docs.length; i++)
+
+        // for (var i=0; i < response.list.length; i++) {
+        //     var futureWeather = [];
+        //     if (response.list.dt_txt.charAt(12) === 5) {
+        //         console.log(futureWeather.push(response.list[i]))
+        //     }
+        // }
 
 
-//MAIN PROCESSES
-//======================================================
+
+        console.log(queryURL);
+        console.log(response);
+      });
+}
+
+// On Click
 $("#searchBtn").on('click', function() {
-    runQuery(citySearch, currentWeatherURL);
+
+    citySearch = $("#search").val().trim();
+
+    var newCurrentWeather = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${authKey}`;
+ 
+    var newFiveDay = `https://api.openweathermap.org/data/2.5/forecast?q=${citySearch}&appid=${authKey}`;
+   
+    runCurrentQuery(newCurrentWeather);
+    runForecastQuery(newFiveDay);
 
     return false;
 })
