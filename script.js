@@ -64,7 +64,8 @@ function runCurrentQuery(queryURL) {
       var dayThreeH = responseTwo.daily[2].humidity;
       var dayFourH = responseTwo.daily[3].humidity;
       var dayFiveH = responseTwo.daily[4].humidity;
-    $(".card-link").on("click", function() {
+    
+      function fiveDayForecast() {
         
         $("#day1").html((moment().add(1, 'days')).format('LL'));
         $("#dayOneContent").text("Temperature: " + dayOneTemp + "  Humidity: " + dayOneH);
@@ -80,7 +81,8 @@ function runCurrentQuery(queryURL) {
 
         $("#day5").html((moment().add(5, 'days')).format('LL'));
         $("#dayFiveContent").html("Temperature: " + dayFiveTemp + "  Humidity: " + dayFiveH);
-    })
+    }
+    fiveDayForecast();
 
     });
   });

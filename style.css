@@ -42,6 +42,11 @@
     text-align: center;
 }
 
+#five-day-title {
+    padding: 5px;
+    margin: 15px;
+}
+
 .hide {
     display: none;
 }
