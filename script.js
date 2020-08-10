@@ -19,9 +19,13 @@ function runCurrentQuery(queryURL) {
     windSpeed = (windSpeed * 2.237).toFixed(1);
     console.log(windSpeed);
     var icon = response.weather[0].icon;
+    var description = response.weather[0].description;
     var lat = response.coord.lat;
     var lon = response.coord.lon;
     var queryTwo = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${authKey}`;
+
+    $(".weather").html("Conditions: " + response.weather[0].description + " <img src='https://openweathermap.org/img/w/" + response.weather[0].icon + ".png'>");
+
 //One Call API 
     $.ajax({
       url: queryTwo,
@@ -29,10 +33,10 @@ function runCurrentQuery(queryURL) {
     }).then(function (responseTwo) {
       console.log(queryTwo);
       var uvi = parseInt(responseTwo.current.uvi);
-        
       $("#card").removeClass(".hide");
       $(".city-name").text(city);
-      $(".card-img-top").attr("src", "cloud.jpg");
+      $(".description").text(description);
+      $("#weather-icon").html("<img src='https://openweathermap.org/img/w/" + icon + ".png'>");
       $(".card-title").html(currentDay);
       $(".temperature").html("Temperature: " + temp);
       $(".humidity").html("Humidity: " + humidity);
@@ -52,8 +56,13 @@ function runCurrentQuery(queryURL) {
     }
       uvColorChange();
 
+      var dayOneIcon = responseTwo.daily[0].weather[0].icon;
+      var dayTwoIcon = responseTwo.daily[1].weather[0].icon;
+      var dayThreeIcon = responseTwo.daily[2].weather[0].icon;
+      var dayFourIcon = responseTwo.daily[3].weather[0].icon;
+      var dayFiveIcon = responseTwo.daily[4].weather[0].icon;
+
       var dayOneTemp = responseTwo.daily[0].temp.day;
-      console.log(dayOneTemp);
       var dayTwoTemp = responseTwo.daily[1].temp.day;
       var dayThreeTemp = responseTwo.daily[2].temp.day;
       var dayFourTemp = responseTwo.daily[3].temp.day;
@@ -68,7 +77,7 @@ function runCurrentQuery(queryURL) {
       function fiveDayForecast() {
         
         $("#day1").html((moment().add(1, 'days')).format('LL'));
-        $("#dayOneContent").text("Temperature: " + dayOneTemp + "  Humidity: " + dayOneH);
+        $("#dayOneContent").text("Temperature: " + dayOneTemp + '\n' + "Humidity: " + dayOneH);
 
         $("#day2").html((moment().add(2, 'days')).format('LL'));
         $("#dayTwoContent").html("Temperature: " + dayTwoTemp + "  Humidity: " + dayTwoH);
@@ -92,6 +101,8 @@ function runCurrentQuery(queryURL) {
 
 // On Click
 $("#searchBtn").on("click", function () {
+
+
   citySearch = $("#search").val().trim();
 
   var newCurrentWeather = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${authKey}`;
@@ -108,10 +119,13 @@ $("#searchBtn").on("click", function () {
     citySearch = newButton.html();
     newCurrentWeather = `https://api.openweathermap.org/data/2.5/weather?q=${citySearch}&appid=${authKey}`;
     runCurrentQuery(newCurrentWeather);
-
     return false;
   });
-
   return false;
-
 });
+
+//Setting Items to local Storage
+var value = $("#search").val();
+localStorage.setItem("location", value);
+//Getting Items from Local Storage
+$("#search").val(localStorage.getItem("location"));

@@ -29,6 +29,10 @@
     margin-top: -40px;
 }
 
+#weather-icon {
+    align-items: center;
+}
+
 .card-body {
     margin-bottom: -12px;
 }

@@ -21,7 +21,7 @@
     <!-- Navbar Sticky-Top-->
     <nav class="navbar sticky-top navbar-light bg-light justify-content-center">
         <form>
-            <div class="form-row">
+            <div class="form-row" id="search-div">
                 <div class="col-sm-10">
                     <input id="search" class="form-control" type="text" placeholder="City">
                 </div>
@@ -45,16 +45,19 @@
     <!-- dynamically produce card for that city -->
             <div id="card" class="card col-lg-3" style="width: 18rem;">
                 <div class="card-header city-name"> 
-                </div>
+            </div>
+            <div id="weather-icon">
                 <img class="card-img-top" alt="Weather Icon">
+            </div>   
                 <div class="card-body">
                   <h5 class="card-title "></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item temperature">Cras justo odio</li>
-                  <li class="list-group-item humidity">Dapibus ac facilisis in</li>
-                  <li class="list-group-item wind">Vestibulum at eros</li>
-                  <li class="list-group-item uvIndex">Vestibulum at eros</li>
+                  <li class="list-group-item description"></li>
+                  <li class="list-group-item temperature"></li>
+                  <li class="list-group-item humidity"></li>
+                  <li class="list-group-item wind"></li>
+                  <li class="list-group-item uvIndex"></li>
                   <button href="#" class="list-group-item list-group-item-action card-link">5 Day Forecast</button>
                 </ul>
               </div>
