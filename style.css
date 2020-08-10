@@ -2,11 +2,12 @@
 .jumbotron {
     background-image: url(Cloud.jpg);
     /* background-size: 110% 170%; */
-    background-position: center; 
+    /* background-position: center;  */
     background-repeat: no-repeat;
-    /* background-size: cover;
-    background-position-x: right;
-    background-position-y: -3rem;  */
+    background-size: cover;
+    background-position: fixed;
+    /* background-position-x: right;
+    background-position-y: -5rem;  */
     color: whitesmoke;
     text-shadow: 2px 2px 4px #000000;
 }
@@ -26,6 +27,19 @@
 
 .navbar {
     margin-top: -40px;
+}
+
+.card-body {
+    margin-bottom: -12px;
+}
+
+.city-name {
+    font-size: 18pt;
+    text-align: center;
+}
+
+.card-title {
+    text-align: center;
 }
 
 .hide {

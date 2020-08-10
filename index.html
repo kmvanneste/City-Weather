@@ -36,37 +36,83 @@
     <!-- container -->
     <div class="container">
         <div class="row">
-            <!-- dynamically produce buttons based on city -->
+            <br><br>
+        </div>
+        <div class="row">
+    <!-- dynamically produce buttons based on city -->
             <div class="btn-group-vertical city-name-btn col-lg-3" id="btn-group">
             </div>
-            <!-- dynamically produce card for that city -->
+    <!-- dynamically produce card for that city -->
             <div id="card" class="card col-lg-3" style="width: 18rem;">
-                <div class="card-header city-name">
-                    <!-- City name here -->
+                <div class="card-header city-name"> 
                 </div>
-
                 <img class="card-img-top" alt="Weather Icon">
-                
                 <div class="card-body">
-                  <h5 class="card-title"></h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <h5 class="card-title "></h5>
                 </div>
                 <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
+                  <li class="list-group-item temperature">Cras justo odio</li>
+                  <li class="list-group-item humidity">Dapibus ac facilisis in</li>
+                  <li class="list-group-item wind">Vestibulum at eros</li>
+                  <li class="list-group-item uvIndex">Vestibulum at eros</li>
+                  <button href="#" class="list-group-item list-group-item-action card-link">5 Day Forecast</button>
                 </ul>
-                <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
-                </div>
               </div>
+    <!-- dynamically produce 5 day forecast -->
+           <div class="col-lg-6">
+            <ul class="list-unstyled">
+                <li class="media">
+                  <img src="" class="mr-3" alt="weather icon">
+                  <div class="media-body">
+                    <h5 class="mt-0 mb-1" id="day1"></h5>
+                    <p id="dayOneContent"></p>
+                  </div>
+                </li>
+                <li class="media my-4">
+                  <img src="" class="mr-3" alt="weather icon">
+                  <div class="media-body">
+                    <h5 class="mt-0 mb-1" id="day2">List-based media object</h5>
+                    <p id="dayTwoContent"></p>
+                  </div>
+                </li>
+                <li class="media">
+                  <img src="" class="mr-3" alt="weather icon">
+                  <div class="media-body">
+                    <h5 class="mt-0 mb-1" id="day3">List-based media object</h5>
+                    <p id="dayThreeContent"></p>
+                  </div>
+                </li>
+                <li class="media my-4">
+                    <img src="" class="mr-3" alt="weather icon">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1" id="day4">List-based media object</h5>
+                      <p id="dayFourContent"></p>
+                    </div>
+                  </li>
+                  <li class="media">
+                    <img src="" class="mr-3" alt="weather icon">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-1" id="day5">List-based media object</h5>
+                      <p id="dayFiveContent"></p>
+                    </div>
+                  </li>
+              </ul>
+
+           </div>   
 
 
+    <!-- spacing at bottom of page -->
+        </div>
+        <div class="row">
+            <br><br>
         </div>
 
-
     </div>
+
+    <!-- footer -->
+    <footer class="footer">
+       
+    </footer>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
