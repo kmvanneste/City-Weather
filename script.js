@@ -1,8 +1,7 @@
 $(document).ready(function () {
   // VARIABLES
   var authKey = "7558419d9a99d2be3b1975a5ecc02218";
-  var currentDay = moment().format("MMMM Do YYYY");
-  var currentTime = moment().format("h:mm:ss a");
+  var currentDay = moment().format("LL");
   var citySearch = "";
   var location = JSON.parse(localStorage.getItem("location")) || [];
   for (var i=0; i < location.length; i++) {
@@ -35,6 +34,7 @@ function createButton(citySearch) {
 
       var city = response.name;
       var temp = response.main.temp;
+      temp = Math.round((temp - 273.15) * (9/5) + 32);
       var humidity = response.main.humidity;
       var windSpeed = parseInt(response.wind.speed);
       windSpeed = (windSpeed * 2.237).toFixed(1);
@@ -63,12 +63,12 @@ function createButton(citySearch) {
         $("#card").removeClass(".hide");
         $(".city-name").text(city);
         $(".description").text(description);
-        $("#weather-icon").html(
-          "<img src='https://openweathermap.org/img/w/" + icon + ".png'>"
-        );
+
+        $("#weather-icon").html("<img id='main-weather-icon' src='https://openweathermap.org/img/w/" + icon + ".png'>");
+    
         $(".card-title").html(currentDay);
-        $(".temperature").html("Temperature: " + temp);
-        $(".humidity").html("Humidity: " + humidity);
+        $(".temperature").html(temp + "℉");
+        $(".humidity").html("Humidity: " + humidity + "%");
         $(".wind").html("Wind Speed: " + windSpeed + " mph");
         $(".uvIndex").html("UV Index: " + uvi);
 
@@ -86,16 +86,26 @@ function createButton(citySearch) {
         uvColorChange();
 
         var dayOneIcon = responseTwo.daily[0].weather[0].icon;
+        $("#weather-icon").html(
+            "<img src='https://openweathermap.org/img/w/" + icon + ".png'>"
+          );
+
         var dayTwoIcon = responseTwo.daily[1].weather[0].icon;
         var dayThreeIcon = responseTwo.daily[2].weather[0].icon;
         var dayFourIcon = responseTwo.daily[3].weather[0].icon;
         var dayFiveIcon = responseTwo.daily[4].weather[0].icon;
 
-        var dayOneTemp = responseTwo.daily[0].temp.day;
-        var dayTwoTemp = responseTwo.daily[1].temp.day;
-        var dayThreeTemp = responseTwo.daily[2].temp.day;
-        var dayFourTemp = responseTwo.daily[3].temp.day;
-        var dayFiveTemp = responseTwo.daily[4].temp.day;
+        var dayOneTemp = parseInt(responseTwo.daily[0].temp.day);
+        dayOneTemp = Math.round((dayOneTemp - 273.15) * (9/5) + 32);
+        var dayTwoTemp = parseInt(responseTwo.daily[1].temp.day);
+        dayTwoTemp = Math.round((dayTwoTemp - 273.15) * (9/5) + 32);
+        var dayThreeTemp = parseInt(responseTwo.daily[2].temp.day);
+        dayThreeTemp = Math.round((dayThreeTemp - 273.15) * (9/5) + 32);
+        var dayFourTemp = parseInt(responseTwo.daily[3].temp.day);
+        dayFourTemp = Math.round((dayFourTemp - 273.15) * (9/5) + 32);
+        var dayFiveTemp = parseInt(responseTwo.daily[4].temp.day);
+        dayFiveTemp = Math.round((dayFiveTemp - 273.15) * (9/5) + 32);
+       
 
         var dayOneH = responseTwo.daily[0].humidity;
         var dayTwoH = responseTwo.daily[1].humidity;
@@ -104,29 +114,29 @@ function createButton(citySearch) {
         var dayFiveH = responseTwo.daily[4].humidity;
 
         function fiveDayForecast() {
-          $("#day1").html(moment().add(1, "days").format("LL"));
+          $("#day1").html(moment().add(1, "days").format("ddd D"));
           $("#dayOneContent").text(
-            "Temperature: " + dayOneTemp + "\n" + "Humidity: " + dayOneH
+            "Temperature: " + dayOneTemp + "℉" + "  Humidity: " + dayOneH + "%"
           );
 
-          $("#day2").html(moment().add(2, "days").format("LL"));
+          $("#day2").html(moment().add(2, "days").format("ddd D"));
           $("#dayTwoContent").html(
-            "Temperature: " + dayTwoTemp + "  Humidity: " + dayTwoH
+            "Temperature: " + dayTwoTemp + "℉" + "  Humidity: " + dayTwoH + "%"
           );
 
-          $("#day3").html(moment().add(3, "days").format("LL"));
+          $("#day3").html(moment().add(3, "days").format("ddd D"));
           $("#dayThreeContent").html(
-            "Temperature: " + dayThreeTemp + "  Humidity: " + dayThreeH
+            "Temperature: " + dayThreeTemp + "℉" + "  Humidity: " + dayThreeH + "%"
           );
 
-          $("#day4").html(moment().add(4, "days").format("LL"));
+          $("#day4").html(moment().add(4, "days").format("ddd D"));
           $("#dayFourContent").html(
-            "Temperature: " + dayFourTemp + "  Humidity: " + dayFourH
+            "Temperature: " + dayFourTemp + "℉" + "  Humidity: " + dayFourH + "%"
           );
 
-          $("#day5").html(moment().add(5, "days").format("LL"));
+          $("#day5").html(moment().add(5, "days").format("ddd D"));
           $("#dayFiveContent").html(
-            "Temperature: " + dayFiveTemp + "  Humidity: " + dayFiveH
+            "Temperature: " + dayFiveTemp + "℉" + "  Humidity: " + dayFiveH + "%"
           );
         }
         fiveDayForecast();

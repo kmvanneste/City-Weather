@@ -29,12 +29,15 @@
     margin-top: -40px;
 }
 
-#weather-icon {
-    align-items: center;
+#weather-icon img {
+    width: 120px;
+    height: 120px;
+    margin-left: 50px;
 }
 
-.card-body {
-    margin-bottom: -12px;
+.card-body h1{
+    font-size: 55pt;
+    text-align: center;
 }
 
 .city-name {
@@ -49,6 +52,8 @@
 #five-day-title {
     padding: 5px;
     margin: 15px;
+    border: black 1px solid;
+    text-align: center;
 }
 
 .hide {
