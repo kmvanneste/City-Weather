@@ -34,6 +34,10 @@ body{
     margin-top: -40px;
 }
 
+.city-name-btn {
+    font-size: 16pt;
+}
+
 #weather-icon img {
     width: 120px;
     height: 120px;
