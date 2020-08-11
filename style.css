@@ -1,4 +1,8 @@
 
+body{
+    background-color: #ebecf0;
+}
+
 .jumbotron {
     background-image: url(Cloud.jpg);
     /* background-size: 110% 170%; */
@@ -14,15 +18,16 @@
 
 .jumbo-title{
     margin-left: 80px;
+    margin-top: 50px;
     font-family: 'La Belle Aurore', cursive;
-    font-size: 60pt;
+    font-size: 62pt;
 }
 
 .jumbo-subtitle {
     margin-left: 200px;
     margin-top: -30px;
     font-family: 'La Belle Aurore', cursive;
-    font-size: 20pt
+    font-size: 25pt
 }
 
 .navbar {
@@ -45,15 +50,32 @@
     text-align: center;
 }
 
-.card-title {
+/* 5-Day Forecast Styling */
+.col-md-3 {
     text-align: center;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    margin-top: 30px;
 }
 
-#five-day-title {
-    padding: 5px;
-    margin: 15px;
-    border: black 1px solid;
-    text-align: center;
+.date {
+    font-size: 14pt;
+}
+
+.temp {
+    font-size: 16pt;
+    font-weight: bold;
+}
+
+.icon img {
+    height: 65px;
+    width: 65px;
+    background-position-y: center;
+    margin-bottom: 15px;
+}
+
+.hum{
+    font-size: 12pt;
 }
 
 .hide {

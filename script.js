@@ -72,13 +72,13 @@ $(document).ready(function () {
 
         function uvColorChange() {
           if (uvi < 3) {
-            $(".uvIndex").css("background-color", "#66b447");
+            $(".uvIndex").css("color", "#66b447");
           } else if (uvi < 6) {
-            $(".uvIndex").css("background-color", "#ffe135");
+            $(".uvIndex").css("color", "#ffd300");
           } else if (uvi < 9) {
-            $(".uvIndex").css("background-color", "#ff631c");
+            $(".uvIndex").css("color", "#ff631c");
           } else {
-            $(".uvIndex").css("background-color", "#ff0800");
+            $(".uvIndex").css("color", "#ff0800");
           }
         }
         uvColorChange();

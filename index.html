@@ -16,7 +16,7 @@
     <div class="jumbotron">
         <h1 class="display-4 jumbo-title">City Weather</h1>
         <p class="lead jumbo-subtitle">Forecasts for the Urban Traveler</p>
-        <br><br><br><br>
+        <br><br>
     </div>
     <!-- Navbar Sticky-Top-->
     <nav class="navbar sticky-top navbar-light bg-light justify-content-center">
@@ -31,8 +31,6 @@
             </div>
          </form>
     </nav>
-   
-
     <!-- container -->
     <div class="container">
         <div class="row">
@@ -60,7 +58,7 @@
                   <li class="list-group-item uvIndex"></li>
                 </ul>
             </div>
-    <!-- dynamically produce 5 day forecast -->
+    <!-- dynamically produce 5 day forecast card -->
                 <div class="card col-lg-6 hide">
                   <div class="card-header">
                       5-Day Forecast
@@ -68,19 +66,19 @@
           <!-- Row 1 - Day 1  -->
                 <div class="foo">
                   <div class="row">
-                      <div class="col-md-3">
+                      <div class="col-md-3 date">
                           <div id="dayOneDate">
                           </div>
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-3 temp">
                           <div id="dayOneTemp">
                           </div>
                       </div>
                       <div class="col-md-3">
-                          <div id="dayOneIcon">
+                          <div id="dayOneIcon" class="icon">
                           </div>
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-3 hum">
                           <div id="dayOneH">
                           </div>
                       </div>
@@ -89,19 +87,19 @@
             <!-- Row 2 - Day 2 -->
               <div class="foo">
                 <div class="row">
-                    <div class="col-md-3">
+                    <div class="col-md-3 date">
                         <div id="dayTwoDate">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 temp">
                         <div id="dayTwoTemp">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div id="dayTwoIcon">
+                        <div id="dayTwoIcon" class="icon">
                         </div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 hum">
                         <div id="dayTwoH">
                         </div>
                     </div>
@@ -110,19 +108,19 @@
             <!-- Row 3 - Day 3 -->
             <div class="foo">
               <div class="row">
-                  <div class="col-md-3">
+                  <div class="col-md-3 date">
                       <div id="dayThreeDate">
                       </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 temp">
                       <div id="dayThreeTemp">
                       </div>
                   </div>
                   <div class="col-md-3">
-                      <div id="dayThreeIcon">
+                      <div id="dayThreeIcon" class="icon">
                       </div>
                   </div>
-                  <div class="col-md-3">
+                  <div class="col-md-3 hum">
                       <div id="dayThreeH">
                       </div>
                   </div>
@@ -131,19 +129,19 @@
           <!-- Row 4 - Day 4 -->
           <div class="foo">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 date">
                     <div id="dayFourDate">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 temp">
                     <div id="dayFourTemp">
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div id="dayFourIcon">
+                    <div id="dayFourIcon" class="icon">
                     </div>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 hum">
                     <div id="dayFourH">
                     </div>
                 </div>
@@ -152,19 +150,19 @@
         <!-- Row 5 Day 5 -->
         <div class="foo">
           <div class="row">
-              <div class="col-md-3">
+              <div class="col-md-3 date">
                   <div id="dayFiveDate">
                   </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 temp">
                   <div id="dayFiveTemp">
                   </div>
               </div>
               <div class="col-md-3">
-                  <div id="dayFiveIcon">
+                  <div id="dayFiveIcon" class="icon">
                   </div>
               </div>
-              <div class="col-md-3">
+              <div class="col-md-3 hum">
                   <div id="dayFiveH">
                   </div>
               </div>
